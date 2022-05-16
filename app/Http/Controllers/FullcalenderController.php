@@ -33,9 +33,6 @@ class FullcalenderController extends Controller
     {
         request()->validate(Event::$rules);
         $event->update($request->all());
-        /* $event->date=Carbon::CreateFromFormat('Y-m-d', $event->date)->format('Y-m-d');
-        $event->time_start=Carbon::CreateFromFormat('H:i:s', $event->time_start)->format('H:i:s');
-        $event->time_end=Carbon::CreateFromFormat('H:i:s', $event->time_end)->format('H:i:s'); */
         return response()->json($event);
     }
     function delete_event(Request $request)
